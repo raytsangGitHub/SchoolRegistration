@@ -53,25 +53,19 @@ public class StudentsController : ControllerBase
 
     // PUT: api/students/{id}
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateStudent(Guid id, Student student)
+    public async Task<IActionResult> UpdateStudent(Guid id, StudentPutDto dto)
     {
-        if (id != student.Id) return BadRequest();
+        var student = await _context.Students.FindAsync(id);
+        if (student == null) return NotFound();
 
-        _context.Entry(student).State = EntityState.Modified;
+        student.FirstName = dto.FirstName;
+        student.LastName = dto.LastName;
+        student.StudenId = dto.StudenId;
+        student.Email = dto.Email;
+        student.EnrollmentDate = dto.EnrollmentDate;
 
-        try
-        {
-            await _context.SaveChangesAsync();
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!_context.Students.Any(e => e.Id == id))
-                return NotFound();
-            else
-                throw;
-        }
-
-        return NoContent();
+        await _context.SaveChangesAsync();
+        return Ok(student);
     }
 
     // DELETE: api/students/{id}
