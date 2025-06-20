@@ -1,15 +1,12 @@
-import React from 'react'
+import Home from './pages/Home';
 
-const App = () => {
+function App()
+{
   return (
-     <>
-      <div className='container bg-red-500 mx-auto'>
-           <h1 className='text-4xl text-amber-200'>Vite + React</h1>
-      </div>
-      
-    </>
-  )
+    <div className="p-6">
+      <Home />
+    </div>
+  );
 }
 
-export default App
-
+export default App;

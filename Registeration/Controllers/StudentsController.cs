@@ -40,7 +40,7 @@ public class StudentsController : ControllerBase
         {
             FirstName = dto.FirstName,
             LastName = dto.LastName,
-            StudenId = dto.StudenId,
+            StudentId = dto.StudentId,
             Email = dto.Email,
             EnrollmentDate = dto.EnrollmentDate
         };
@@ -60,7 +60,7 @@ public class StudentsController : ControllerBase
 
         student.FirstName = dto.FirstName;
         student.LastName = dto.LastName;
-        student.StudenId = dto.StudenId;
+        student.StudentId = dto.StudentId;
         student.Email = dto.Email;
         student.EnrollmentDate = dto.EnrollmentDate;
 

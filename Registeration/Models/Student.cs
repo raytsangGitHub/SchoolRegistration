@@ -8,7 +8,7 @@ public partial class Student
 
     public string LastName { get; set; } = null!;
 
-    public string StudenId { get; set; } = null!;
+    public string StudentId { get; set; } = null!;
 
     public string Email { get; set; } = null!;
 

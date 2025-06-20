@@ -81,9 +81,9 @@ public partial class SchoolDbContext : DbContext
             entity.Property(e => e.LastName)
                 .HasMaxLength(100)
                 .HasColumnName("last_name");
-            entity.Property(e => e.StudenId)
+            entity.Property(e => e.StudentId)
                 .HasMaxLength(100)
-                .HasColumnName("studen_id");
+                .HasColumnName("student_id");
         });
 
         modelBuilder.Entity<StudentCourse>(entity =>
