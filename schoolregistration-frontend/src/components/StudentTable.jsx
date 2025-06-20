@@ -15,7 +15,7 @@ const StudentTable = forwardRef((props, ref) =>
 
     const loadStudents = () =>
     {
-        fetch("http://localhost:5191/api/students")
+        fetch("https://registeration.fly.dev/api/students")
             .then((res) => res.json())
             .then((data) =>
             {

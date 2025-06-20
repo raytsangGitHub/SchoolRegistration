@@ -23,7 +23,7 @@ export default function CourseRegistrationForm()
         e.preventDefault();
         try
         {
-            const res = await fetch("http://localhost:5191/api/courses", {
+            const res = await fetch("https://registeration.fly.dev/api/students", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(course),

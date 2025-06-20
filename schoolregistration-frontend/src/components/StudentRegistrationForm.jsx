@@ -1,5 +1,6 @@
 // src/components/StudentRegistrationForm.jsx
 import React, { useState } from "react";
+import { data } from "react-router-dom";
 
 const StudentRegistrationForm = ({ onRegister }) =>
 {
@@ -8,7 +9,7 @@ const StudentRegistrationForm = ({ onRegister }) =>
         lastName: "",
         studentId: "",
         email: "",
-        enrollmentDate: "2025-06-19",
+        enrollmentDate: new Date().toISOString().split("T")[0], //default today's date
     });
 
     const handleChange = (e) =>
@@ -20,7 +21,7 @@ const StudentRegistrationForm = ({ onRegister }) =>
     {
         e.preventDefault();
 
-        const response = await fetch("http://localhost:5191/api/students", {
+        const response = await fetch("https://registeration.fly.dev/api/students", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
